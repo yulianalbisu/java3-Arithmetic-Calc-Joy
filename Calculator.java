@@ -17,11 +17,11 @@ public class Calculator {
 
 			if (tokens[0].equals("q")){
 				System.out.println("You will exit.");
-				break;
+				break; //it wont exit by itself we have to tell it
 			}
 			else if (tokens.length < 2){
 				System.out.println("Not enough inputs.");
-				continue;
+				continue; //it needs to number to work num1 and num2
 			}
 
 			String operator = tokens[0];
@@ -40,11 +40,11 @@ public class Calculator {
 			float num1Float;
 			float num2Float;
 
-			try {
+			try { //if num1 dont work move to num2
 				num1Float = Float.parseFloat(num1);
 				num2Float = Float.parseFloat(num2);
-			} catch (NumberFormatException e){
-				System.out.println("Those aren't numbers!");
+			} catch (NumberFormatException e){ //value raise exception, when the value is not number
+							System.out.println("Those aren't numbers!");
 				continue;
 			}
 
