@@ -1,6 +1,7 @@
 package calc;
 import java.lang.Math;
 import java.util.Scanner;
+import java.util.Random;
 
 
 public class Arithmetic {
@@ -34,5 +35,11 @@ public class Arithmetic {
 
 	public static float mod(float num1, float num2) {
 		return num1%num2;
+	}
+	public static float cubs(float num1, float num2) {
+		return num1*num1*num1 * num2*num2*num2; //I was using () around, no! is not like that
+	}
+	public static float rand(float num1, float num2){
+		return (float)(Math.random()*(num2-num1+1)+num1); //on this method (int)Math.floor(Math.random()*(max-min+1)+min), we got rid of Math.floor
 	}
 }

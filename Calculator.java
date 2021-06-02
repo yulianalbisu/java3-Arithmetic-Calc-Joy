@@ -2,12 +2,13 @@ import calc.Arithmetic;
 import java.util.Scanner;
 import java.util.Arrays;
 import java.lang.Float;
+import java.util.Random;
 
 public class Calculator {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 
-		while (true){
+		while (true){ //used to execute a block of statements continuously until the given condition is true.
 			System.out.println("Enter your equation > ");
 			String userInput = input.nextLine();
 
@@ -24,12 +25,12 @@ public class Calculator {
 				continue; //it needs to number to work num1 and num2
 			}
 
-			String operator = tokens[0];
-			String num1 = tokens[1];
+			String operator = tokens[0]; //is it the math symbol?
+			String num1 = tokens[1]; // is the first number
 			String num2;
 			// System.out.println(operator + num1);
 
-			if (tokens.length < 3){
+			if (tokens.length < 3){ //lenght of the string
 				num2 = "0";
 			} else {
 				num2 = tokens[2];
@@ -64,6 +65,10 @@ public class Calculator {
 				result = Arithmetic.power(num1Float, num2Float);
 			} else if (operator.equals("mod")){
 				result = Arithmetic.mod(num1Float, num2Float);
+			} else if (operator.equals("cubs")){
+				result = Arithmetic.cubs(num1Float, num2Float);
+			} else if (operator.equals("rand")){
+				result = Arithmetic.rand(num1Float, num2Float);
 			} else {
 				System.out.println("Please provide an operator and two numbers.");
 				continue;
